@@ -2,6 +2,7 @@
   const spinner = document.getElementById("spinner");
   const peopleSpan = document.getElementById("peopleCount");
   const stopBtn = document.getElementById("stopBtn");
+  const luckBtn = document.getElementById("luckBtn");
   const colorPicker = document.getElementById("colorPicker");
   const dirBtns = document.querySelectorAll(".dir-btn");
   let currentQueue = 237;
@@ -59,6 +60,10 @@
     }, 2000);
   }
 
+  function onLuckClick() {
+    // пусто
+  }
+
   function setDirection(direction) {
     currentDirection = direction;
     applyDirection();
@@ -81,6 +86,7 @@
     clearResumeTimeout();
 
     stopBtn.addEventListener("click", onStopClick);
+    luckBtn.addEventListener("click", onLuckClick);
     colorPicker.addEventListener("input", (e) =>
       setSpinnerColor(e.target.value),
     );
