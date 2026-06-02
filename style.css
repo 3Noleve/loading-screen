@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0e0f12;
+  font-family: "Segoe UI", "Roboto", system-ui, monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.card {
+  background: #1a1c20;
+  border-radius: 1.5rem;
+  padding: 2rem 1.8rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid #2a2d33;
+}
+
+.queue {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.queue-label {
+  color: #8b8f9e;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.queue-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #e2e4e8;
+  background: #0c0d10;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  font-feature-settings: "tnum";
+  border: 1px solid #2c2f36;
+  box-shadow: inset 0 1px 2px #00000020;
+}
+
+.queue-hint {
+  font-size: 0.7rem;
+  color: #5f6472;
+}
+
+.spinner-area {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #2c2f36;
+  border-left-color: #6b8c9e;
+  border-top-color: #6b8c9e;
+  border-radius: 50%;
+  transition: border-color 0.1s;
+  animation: spin-cw 0.9s linear infinite;
+}
+
+.spinner.reverse {
+  animation-name: spin-ccw;
+}
+
+.spinner.paused {
+  animation-play-state: paused;
+}
+
+@keyframes spin-cw {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes spin-ccw {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+.settings {
+  background: #111316;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border: 1px solid #282b30;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.setting span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #7b7f8c;
+  letter-spacing: 1px;
+}
+
+input[type="color"] {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #3a3e47;
+  border-radius: 8px;
+  background: #0c0d10;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dir-group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dir-btn {
+  background: #23262c;
+  border: none;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+  border-radius: 2rem;
+  color: #bbb;
+  cursor: pointer;
+  transition: 0.1s;
+  font-weight: bold;
+}
+
+.dir-btn.active {
+  background: #3b404a;
+  color: white;
+  box-shadow: inset 0 1px 2px #00000030;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1;
+  background: #25282f;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.08s linear;
+  border-bottom: 1px solid #3b3f48;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.luck {
+  background: #1f2228;
+  color: #8d93a0;
+}
+
+.stop {
+  background: #2a2522;
+  color: #d6b48c;
+  border-bottom-color: #5a4a3a;
+}

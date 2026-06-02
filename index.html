@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Подождите...</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="queue">
+        <div class="queue-label">ОЧЕРЕДЬ</div>
+        <div class="queue-number" id="peopleCount">237</div>
+        <div class="queue-hint">человек · время неизвестно</div>
+      </div>
+
+      <div class="spinner-area">
+        <div class="spinner" id="spinner"></div>
+      </div>
+
+      <div class="settings">
+        <div class="setting">
+          <span>цвет</span>
+          <input type="color" id="colorPicker" value="#6b8c9e" />
+        </div>
+        <div class="setting">
+          <span>направление</span>
+          <div class="dir-group">
+            <button class="dir-btn active" data-dir="cw">⟳</button>
+            <button class="dir-btn" data-dir="ccw">⟲</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn luck" id="luckBtn">Испытать удачу</button>
+        <button class="btn stop" id="stopBtn">Остановить загрузку</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
