@@ -1,6 +1,7 @@
 (function () {
   const spinner = document.getElementById("spinner");
   const peopleSpan = document.getElementById("peopleCount");
+  const colorPicker = document.getElementById("colorPicker");
   const dirBtns = document.querySelectorAll(".dir-btn");
   let currentQueue = 237;
   let currentDirection = "cw";
@@ -15,6 +16,11 @@
     } else {
       spinner.classList.add("reverse");
     }
+  }
+
+  function setSpinnerColor(hex) {
+    spinner.style.borderLeftColor = hex;
+    spinner.style.borderTopColor = hex;
   }
 
   function setDirection(direction) {
@@ -32,7 +38,11 @@
 
   function init() {
     updateQueueDisplay();
+    setSpinnerColor(colorPicker.value);
     setDirection("cw");
+    colorPicker.addEventListener("input", (e) =>
+      setSpinnerColor(e.target.value),
+    );
     dirBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const dir = btn.getAttribute("data-dir");
